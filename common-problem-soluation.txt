@@ -1,0 +1,30 @@
+/* Dynamic Element Size Fix with Screen code */
+
+function() {
+  var vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', vh + 'px');
+}
+
+<style>
+    #custom-map{
+        height: calc(var(--vh,1vh) * 100 - calc(280px)); // exrta gap without main container = calc(280px)
+        min-height: 400px;
+    }
+</style>
+
+=========================================
+
+
+
+/* flatpickr setting for get custom inline value code */
+
+ document.querySelectorAll('input[type=date]').forEach(e => {
+            flatpickr(e, {
+                minDate: e.getAttribute('min'),
+                maxDate: e.getAttribute('max'),
+                defaultDate: e.getAttribute('value'),
+                dateFormat: 'Y-m-d',
+            });
+ });
+
+=========================================
