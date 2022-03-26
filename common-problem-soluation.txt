@@ -38,3 +38,14 @@
  </script>
 
 =========================================
+
+
+/* Custom simplebar Scrollbar function */
+
+<script>
+
+    $('.simple-bar').each((index, element) => new SimpleBar(element, { autoHide: true }));
+
+</script>
+
+=========================================
