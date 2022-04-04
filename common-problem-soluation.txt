@@ -49,3 +49,13 @@
 </script>
 
 =========================================
+
+/* Make feather icon follow font-size function */
+
+<script>
+
+    feather.replace({width: '1em', height: '1em'})
+
+</script>
+
+=========================================
