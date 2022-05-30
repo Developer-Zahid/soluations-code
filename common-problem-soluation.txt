@@ -59,3 +59,24 @@
 </script>
 
 =========================================
+
+/* Set Scrollbar Width function */
+
+<script>
+
+    function getAndSetScrollbarWidth(){
+        const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+        $("body").attr("style",  `--scrollbarWidth: ${scrollbarWidth}px`);
+    }
+
+</script>
+
+<style>
+
+    .modal-open .scroll-top{
+        right: calc(var(--scrollbarWidth, 0px) + 15px);
+    }
+    
+</style>
+
+=========================================
