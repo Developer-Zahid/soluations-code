@@ -31,7 +31,16 @@
             minDate: e.getAttribute('min'),
             maxDate: e.getAttribute('max'),
             defaultDate: e.getAttribute('value'),
+            altFormat: 'j-m-Y',
             dateFormat: 'Y-m-d',
+            allowInput: true,
+            altInput: true,
+            onReady: (selectedDates, dateStr, instance) => {
+                const id = instance.input.id;
+                const altInput = instance.input.parentElement?.querySelector(".input");
+                altInput.setAttribute("onkeypress", "return false");
+                altInput.setAttribute("onpaste", "return false");
+            },
         });
     });
 
