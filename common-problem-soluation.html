@@ -24,6 +24,9 @@
     
     
     <!-- flatpickr setting for get custom inline value code -->
+
+    <label for="inputID"></label>
+    <input type="date" data-id="inputID" min="" max="" value="">
     
     <script>
     
@@ -100,6 +103,72 @@
             width: '100%',
         });
         $("select").css('width','100%');
+    
+    </script>
+    
+    <!-- ========================================= -->
+    
+    <!-- dataTables searchbar control function -->
+
+    <style>
+        /* for hide dataTables label text */
+        div.dataTables_wrapper div.dataTables_filter label{
+            width: 100%;
+            font-size: 0;
+            margin: 0;
+        }
+        div.dataTables_wrapper div.dataTables_filter input{
+            width: calc(100% - 2px);
+            margin-left: 0;
+        }
+    </style>
+
+    <!-- for appended dataTables searchbar element -->
+
+    <div class="appended_table_searchbar"></div>
+    
+    <script>
+        /* for fix dataTables search input parent class */
+        $(".dataTables_filter").closest('[class*="col"]').attr("class", "col-12 px-0 my-1");
+
+        /* OR */
+
+        /* for appended dataTables search in selected element */
+        $(".dataTables_filter").appendTo(".appended_table_searchbar");
+
+        /* for set dataTables search input placeholder text */
+        $(".dataTables_filter input").attr("placeholder", "Search...");
+    
+    </script>
+    
+    <!-- ========================================= -->
+    
+    <!-- Inner Responsive Table Dropdown cut probolem solve functions -->
+
+    <div class="table-responsive">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="dropdown">
+                            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" data-boundary="viewport" aria-expanded="false"></button>
+                            <div class="dropdown-menu dropdown-menu-right"></div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    
+    <script>
+    
+        $('table').on('shown.bs.dropdown', function (e){
+            $(this).closest('[class*="col"]').addClass("position-static")
+        });
+        $('table').on('hide.bs.dropdown', function () {
+            $(this).closest('[class*="col"]').removeClass("position-static")
+        });
     
     </script>
     
