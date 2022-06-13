@@ -44,6 +44,7 @@
                     const altInput = instance.input.parentElement?.querySelector(".input");
                     altInput.setAttribute("onkeypress", "return false");
                     altInput.setAttribute("onpaste", "return false");
+                    altInput.setAttribute("autocomplete", "off");
                     altInput.setAttribute("id", mainInputDataId);
                 },
             });
