@@ -174,5 +174,65 @@
     </script>
     
     <!-- ========================================= -->
+
+    <!-- Select2 disabled select option cross button hide code -->
+
+    <option value="disabled" data-unique-id="1" disabled="disabled" selected>Text</option>
+
+    <script>
+        /* JS Code */
+        $('.select2').select2({
+            templateSelection : function (tag, container){
+                var $option = $('.select2 option[value="'+tag.id+'"]');
+                if ($option.attr('disabled')){
+                    $(container).addClass('removed-remove-btn');
+                }
+                return tag.text;
+            },
+        })
+    </script>
+
+    <!-- ========================================= -->
+
+    <!-- DataTable Customization Code -->
+
+    <script>
+        // l - Length changing
+        // f - Filtering input
+        // t - The Table
+        // i - Information
+        // p - Pagination
+        // r - pRocessing
+        // < and > - div elements
+        // <"#id" and > - div with an id
+        // <"class" and > - div with a class
+        // <"#id.class" and > - div with an id and class
+
+        $('selector').DataTable({
+            dom: `<"row"
+                    <"col-12 pl-1" f>
+                    <"col-12 d-flex flex-wrap align-items-center justify-content-between"
+                    i
+                    <"d-flex flex-wrap align-items-center" lp>
+                    >
+                    <"col-12 px-0"
+                    <"table-responsive" t>
+                    >
+                    <"col-12 pr-1" p>
+                >`,
+            language: {
+            lengthMenu: '_MENU_',
+            zeroRecords: 'No Record Found',
+            info: '<h3 class="mb-0">Total (_TOTAL_)</h3>',
+            infoEmpty: 'Showing 0 entries',
+            infoFiltered: '(filtered from total _MAX_ entries)',
+            searchPlaceholder: 'Search...',
+            search: '',
+          },
+            stateSave: true,
+        })
+    </script>
+
+    <!-- ========================================= -->
 </head>
 </html>
